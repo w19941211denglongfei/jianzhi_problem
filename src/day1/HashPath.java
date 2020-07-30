@@ -16,13 +16,13 @@ public class HashPath {
         if (len == str.length() - 1) {// len是目前遍历到的str的位置
             return true;
         }
-        if (matrix[i][j] != str.charAt(len)) {
+        if (matrix[i][j] != str.charAt(len)) { //不等于索引字符
             return false;
         }
 
         matrix[i][j] = '*';// 标记当前遍历的位置,防止重复访问
-        int[][] dire = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
-        for (int k = 0; k < 4; k++) {
+        int[][] dire = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } }; //上下左右走
+        for (int k = 0; k < 4; k++) { //四个方向进行遍历
             int newi = i + dire[k][0];
             int newj = j + dire[k][1];
             if (newi >= 0 && newj >= 0 && newi < matrix.length && newj < matrix[0].length
