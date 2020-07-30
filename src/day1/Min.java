@@ -1,5 +1,4 @@
 package day1;
-
 public class Min {
     public static int min(int[] numbers, int length){
         if (numbers == null || length <= 0){
@@ -7,12 +6,13 @@ public class Min {
         }
         int l = 0;
         int r = length - 1;
-        int mid = 0;
+        int mid = 0; //情况1
         while (numbers[l] >= numbers[r]){
             if (r - l == 1){
                 mid = r;
                 break;
             }
+            //情况2
             if (numbers[l] == numbers[r] && numbers[mid] == numbers[l]){
                 return MinInOrder(numbers,l,r);
             }
