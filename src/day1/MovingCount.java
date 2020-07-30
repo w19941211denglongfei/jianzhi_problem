@@ -32,7 +32,7 @@ public class MovingCount {
     private static final int[][] nxt = {{1, 0},{-1, 0},{0, 1},{0, -1}}; //定义一个方向二维数组
 
     public static int movingCount(int threshold, int rows, int cols){
-        if (rows < 1 || cols < 1){
+        if (rows < 1 || cols < 1 || threshold < 0){
             return 0;
         }
         Queue<Node> que = new LinkedList<>(); //双向链表队列
